@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Header from "./components/Header";
+import UploadButton from "./components/UploadButton";
 import "./App.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -11,8 +12,6 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
-
-  const fileInputEl = React.useRef(null);
   const canvasEl = React.useRef(null);
 
   const draw = (event) => {
@@ -35,36 +34,19 @@ function App() {
     ctx.drawImage(image, 0, 0);
   };
 
-  const handleChange = () => {
-    const fileInput = fileInputEl.current;
-
-    if (fileInput === null) {
-      return;
-    }
-
-    const files = fileInput.files;
-
-    if (!files || files.length === 0) {
-      return;
-    }
-
+  const handleChange = (file) => {
     var img = new Image();
     img.addEventListener("load", draw);
     img.onerror = (err) => {
       console.error(err);
     };
-    img.src = URL.createObjectURL(files[0]);
+    img.src = URL.createObjectURL(file);
   };
 
   return (
     <div className={classes.root}>
       <Header />
-      <input
-        type="file"
-        accept="image/*"
-        ref={fileInputEl}
-        onInput={handleChange}
-      />
+      <UploadButton onChange={handleChange} />
       <canvas ref={canvasEl} />
     </div>
   );
