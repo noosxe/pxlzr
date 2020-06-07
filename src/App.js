@@ -1,7 +1,17 @@
 import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Header from "./components/header";
 import "./App.css";
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+}));
+
 function App() {
+  const classes = useStyles();
+
   const fileInputEl = React.useRef(null);
   const canvasEl = React.useRef(null);
 
@@ -47,7 +57,8 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className={classes.root}>
+      <Header />
       <input
         type="file"
         accept="image/*"
