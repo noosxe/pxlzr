@@ -1,12 +1,18 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import { ReactComponent as Logo } from '../logo.svg';
 
 const useStyles = makeStyles((theme) => ({
+  logo: {
+    height: '50px',
+  },
   title: {
-    flexGrow: 1,
+    fontSize: '3em',
+    marginLeft: '10px',
   },
 }));
 
@@ -17,9 +23,12 @@ function Header() {
     <header>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            pxlzr
-          </Typography>
+          <Box display="flex">
+            <Logo className={classes.logo} />
+            <Typography variant="h1" className={classes.title}>
+              pxlzr
+            </Typography>
+          </Box>
         </Toolbar>
       </AppBar>
     </header>
