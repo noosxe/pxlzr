@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="duotone-filter-0" x="-500%" y="-500%" width="1000%" height="1000%">
+      <feColorMatrix type="matrix" result="grayscale" values="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0"/>
+      <feComponentTransfer color-interpolation-filters="sRGB">
+        <feFuncR type="gamma" exponent="1.5" amplitude="1" offset="0"/>
+        <feFuncG type="gamma" exponent="1.5" amplitude="1" offset="0"/>
+        <feFuncB type="gamma" exponent="1.5" amplitude="1" offset="0"/>
+      </feComponentTransfer>
+      <feComponentTransfer color-interpolation-filters="sRGB" result="duotone">
+        <feFuncR type="table" tableValues="0.741 0.988"/>
+        <feFuncG type="table" tableValues="0.043 0.733"/>
+        <feFuncB type="table" tableValues="0.569 0.051"/>
+        <feFuncA type="table" tableValues="0 1"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect x="400" width="200" height="200" style="fill: rgb(255, 0, 0); filter: url(#duotone-filter-0);"/>
+  <rect y="400" width="200" height="200" style="fill: rgb(255, 0, 0); filter: url(#duotone-filter-0);"/>
+  <rect y="200" width="200" height="200" style="fill: rgb(255, 0, 0); filter: url(#duotone-filter-0);" x="200"/>
+  <rect y="400" width="200" height="200" style="fill: rgb(0, 255, 0); filter: url(#duotone-filter-0);" x="200"/>
+  <rect y="200" width="200" height="200" style="fill: rgb(0, 255, 0); filter: url(#duotone-filter-0);" x="400"/>
+  <rect width="200" height="200" style="fill: rgb(0, 255, 0); filter: url(#duotone-filter-0);" x="600"/>
+  <rect y="400" width="200" height="200" style="fill: rgb(0, 0, 255); filter: url(#duotone-filter-0);" x="400"/>
+  <rect y="200" width="200" height="200" style="fill: rgb(0, 0, 255); filter: url(#duotone-filter-0);" x="600"/>
+  <rect width="200" height="200" style="fill: rgb(0, 0, 255); filter: url(#duotone-filter-0);" x="800"/>
+</svg>
