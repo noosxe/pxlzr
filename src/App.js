@@ -1,8 +1,8 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Header from "./components/Header";
-import UploadButton from "./components/UploadButton";
-import "./App.css";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Header from './components/Header';
+import UploadButton from './components/UploadButton';
+import './App.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,13 +30,13 @@ function App() {
     const image = path[0];
     canvas.width = image.width;
     canvas.height = image.height;
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
     ctx.drawImage(image, 0, 0);
   };
 
   const handleChange = (file) => {
     var img = new Image();
-    img.addEventListener("load", draw);
+    img.addEventListener('load', draw);
     img.onerror = (err) => {
       console.error(err);
     };
